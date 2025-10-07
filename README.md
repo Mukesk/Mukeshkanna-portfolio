@@ -2,7 +2,7 @@
 
 > **A modern, responsive portfolio showcasing full-stack development expertise with cutting-edge technologies**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge&logo=vercel)](https://mukeshkanna-portfolio-akbcisej1-mukesks-projects.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge&logo=vercel)](https://mukeshkanna-portfolio.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-View%20Code-blue?style=for-the-badge&logo=github)](https://github.com/Mukesk)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
