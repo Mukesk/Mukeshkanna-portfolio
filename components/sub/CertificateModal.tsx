@@ -165,10 +165,7 @@ export const CertificateModal = ({
             {/* Footer */}
             <div className="px-4 sm:px-6 py-4 border-t border-[#7042f88b]/50 bg-gradient-to-r from-[#0F0A1E]/95 to-[#1A0E2E]/90 backdrop-blur-xl flex-shrink-0">
               <div className="flex flex-col items-center justify-between gap-3 sm:flex-row sm:items-center">
-                <p className="text-gray-300 text-xs sm:text-sm font-medium text-center sm:text-left">
-                  📱 <span className="hidden sm:inline">Click buttons • ESC to close</span>
-                  <span className="sm:hidden">Swipe down or tap close • Pinch to zoom</span>
-                </p>
+              
                 
                 <div className="flex gap-3 w-full sm:w-auto justify-center sm:justify-end">
                   <motion.button
