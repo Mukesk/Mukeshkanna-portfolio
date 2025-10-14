@@ -86,7 +86,7 @@ export const SOCIALS = [
   {
     name: "LeetCode",
     icon: SiLeetcode,
-    link: "https://leetcode.com/mukeshkanna",
+    link: "https://leetcode.com/u/mukeshkanna_k21",
   },
   {
     name: "LinkedIn",
