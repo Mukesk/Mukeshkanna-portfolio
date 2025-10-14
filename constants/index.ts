@@ -170,7 +170,7 @@ export const PROJECTS = [
   {
     title: "🍽️ Swiggy Clone - Food Delivery Platform",
     description: "A comprehensive food delivery application clone with restaurant browsing, menu selection, cart management, and order placement functionality built with modern web technologies.",
-    image: "/projects/swiggy-project.webp",
+    image: "/projects/bitme.webp",
     link: "https://swiggy-clone-psi-liard.vercel.app/",
     github: "https://github.com/Mukesk/SwiggyClone",
     technologies: ["React", "Vite", "Node.js", "Express", "MongoDB"],
