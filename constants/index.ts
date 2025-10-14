@@ -272,7 +272,7 @@ export const CERTIFICATIONS = [
     description: "Master modern CSS techniques, animations, and responsive design",
     students: "45K+ students",
     duration: "28 hours",
-    instructor: "Sarah Drasner",
+    instructor: "Various Experts",
     rating: 4.9,
     status: "Completed",
     skills: ["CSS Grid", "Flexbox", "Sass"],
