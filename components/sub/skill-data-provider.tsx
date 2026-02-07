@@ -36,10 +36,16 @@ export const SkillDataProvider = ({
       initial="hidden"
       variants={imageVariants}
       animate={inView ? "visible" : "hidden"}
+      whileHover={{ scale: 1.1 }}
       custom={index}
       transition={{ delay: index * animationDelay }}
+      className="relative group cursor-pointer"
     >
       <Image src={`/skills/${src}`} width={width} height={height} alt={name} />
+      {/* Tooltip */}
+      <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+        {name}
+      </div>
     </motion.div>
   );
 };

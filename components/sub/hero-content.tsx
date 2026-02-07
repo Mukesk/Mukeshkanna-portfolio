@@ -1,93 +1,107 @@
 "use client";
 
-import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
+import { SparklesIcon, ArrowDownTrayIcon, ArrowRightCircleIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
+import { useTypewriterLoop } from "@/hooks/useTypewriter";
 
 export const HeroContent = () => {
+  const typeWriterText = useTypewriterLoop(["React", "Node.js", "AI Integration", "DevOps"], 150, 2000);
+
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-20 mt-16 md:mt-40 w-full z-[20]"
+      className="flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-20 mt-20 md:mt-32 w-full z-[20]"
     >
-      {/* Left Content */}
-      <div className="w-full flex flex-col gap-5 justify-center m-auto text-center md:text-start">
-        {/* Professional Tags */}
+      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-center md:text-start">
         <motion.div
           variants={slideInFromTop}
-          className="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-2"
+          className="Welcome-box py-[8px] px-[10px] border border-[#7042f88b] opacity-[0.9] flex justify-center md:justify-start items-center gap-2 rounded-lg mx-auto md:mx-0 w-fit"
         >
-          <div className="flex items-center gap-2 py-[6px] px-[8px] border border-[#7042f88b] opacity-[0.9] rounded-lg">
-            <SparklesIcon className="text-[#b49bff] h-4 w-4 md:h-5 md:w-5" />
-            <span className="text-[12px] md:text-[13px] text-gray-200 font-semibold">
-              Fullstack Developer
-            </span>
-          </div>
-          
-          <div className="flex items-center gap-2 py-[6px] px-[8px] border border-[#7042f88b] opacity-[0.9] rounded-lg">
-            <span className="text-[12px] md:text-[13px]">🔒</span>
-            <span className="text-[12px] md:text-[13px] text-gray-200 font-semibold">
-              Cybersecurity
-            </span>
-          </div>
-          
-          <div className="flex items-center gap-2 py-[6px] px-[8px] border border-[#7042f88b] opacity-[0.9] rounded-lg">
-            <span className="text-[12px] md:text-[13px]">🚀</span>
-            <span className="text-[12px] md:text-[13px] text-gray-200 font-semibold">
-              DevOps
-            </span>
-          </div>
+          <SparklesIcon className="text-[#b49bff] h-5 w-5" />
+          <h1 className="Welcome-text text-[13px] font-semibold text-gray-200">
+            Passionate Fullstack Engineer
+          </h1>
         </motion.div>
 
-        {/* Hero Heading */}
-        <motion.h1
+        <motion.div
           variants={slideInFromLeft(0.5)}
-          className="text-3xl sm:text-4xl md:text-6xl font-bold text-white max-w-[600px] leading-tight"
+          className="flex flex-col gap-6 mt-6 text-4xl sm:text-5xl md:text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
-          Transforming{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            Ideas
-          </span>{" "}
-          into Seamless User{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            Experiences
+          <span>
+            Building Secure,
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+              {" "}
+              Scalable & Intelligent{" "}
+            </span>
+            Full-Stack Applications
           </span>
-        </motion.h1>
+        </motion.div>
 
-        {/* Description */}
+        <motion.div
+          variants={slideInFromLeft(0.5)}
+          className="text-2xl md:text-3xl font-semibold text-gray-300 min-h-[40px]"
+        >
+          Expertise in: <span className="text-purple-400">{typeWriterText}</span>
+        </motion.div>
+
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-base sm:text-lg text-gray-400 my-3 sm:my-4 max-w-[500px] mx-auto md:mx-0"
+          className="text-lg text-gray-400 my-5 max-w-[600px] mx-auto md:mx-0"
         >
-          I&apos;m a Full Stack Software Engineer with expertise in cybersecurity and DevOps, specializing in building secure, scalable web applications. Check out my projects and skills.
+          Computer Science undergraduate and Full-Stack & Security Enthusiast.
+          I build secure web applications and vulnerability tools, with experience in React, Node.js, and DevOps.
         </motion.p>
 
-        {/* Call-to-Action Button */}
-      <motion.a
-  variants={slideInFromLeft(1)}
-  href="#projects"
-  className="py-4 px-5 sm:px-6 bg-transparent border-[#7D43FF] border-2 text-white text-base sm:text-base font-medium rounded-full shadow-lg transition-transform hover:scale-105 max-w-[110px] sm:max-w-[180px] mx-auto md:mx-0 flex items-center justify-center"
->
-  Learn more
-</motion.a>
+        <motion.div
+          variants={slideInFromLeft(1)}
+          className="flex flex-wrap gap-5 justify-center md:justify-start"
+        >
+          <a
+            href="#projects"
+            className="py-3 px-8 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] flex items-center gap-2 font-semibold hover:scale-105 transition-transform"
+          >
+            View Projects
+            <ArrowRightCircleIcon className="w-5 h-5" />
+          </a>
 
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            className="py-3 px-8 button-secondary text-center text-white cursor-pointer rounded-lg max-w-[200px] flex items-center gap-2 font-semibold border border-purple-500/30 hover:bg-purple-500/10 hover:scale-105 transition-transform"
+          >
+            Download Resume
+            <ArrowDownTrayIcon className="w-5 h-5" />
+          </a>
+        </motion.div>
       </div>
 
-      {/* Right Side Image */}
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full flex justify-center items-center mt-8 md:mt-0"
+        className="w-full h-full flex justify-center items-center"
       >
         <Image
           src="/hero-bg.svg"
           alt="work icons"
-          height={400}
-          width={400}
+          height={650}
+          width={650}
           draggable={false}
-          className="select-none drop-shadow-lg sm:h-[450px] sm:w-[450px] md:h-[500px] md:w-[500px]"
+          className="select-none"
         />
+      </motion.div>
+
+      {/* Scroll Down Indicator */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+        className="absolute bottom-10 w-full flex justify-center items-center z-[20]"
+      >
+        <a href="#about-me">
+          <ArrowDownTrayIcon className="h-10 w-10 text-purple-500 cursor-pointer hover:text-cyan-400 transition-colors" />
+        </a>
       </motion.div>
     </motion.div>
   );

@@ -86,7 +86,7 @@ export const SOCIALS = [
   {
     name: "LeetCode",
     icon: SiLeetcode,
-    link: "https://leetcode.com/mukeshkanna",
+    link: "https://leetcode.com/u/mukeshkanna_k21/",
   },
   {
     name: "LinkedIn",
@@ -154,36 +154,90 @@ export const FULLSTACK_SKILL = [
 
 ] as const;
 
+export const DEVOPS_SKILL = [
+  {
+    skill_name: "Docker",
+    image: "docker.png",
+    width: 60,
+    height: 60,
+  },
+  {
+    skill_name: "Kubernetes",
+    image: "go.png", // Placeholder using Go
+    width: 60,
+    height: 60,
+  },
+  {
+    skill_name: "AWS",
+    image: "docker.png", // Placeholder
+    width: 60,
+    height: 60,
+  },
+  {
+    skill_name: "Jenkins",
+    image: "prisma.png", // Placeholder
+    width: 60,
+    height: 60,
+  }
+] as const;
+
+export const AI_SKILL = [
+  {
+    skill_name: "Python",
+    image: "js.png", // Placeholder
+    width: 60,
+    height: 60,
+  },
+  {
+    skill_name: "TensorFlow",
+    image: "ts.png", // Placeholder
+    width: 60,
+    height: 60,
+  },
+  {
+    skill_name: "OpenAI",
+    image: "next.png", // Placeholder
+    width: 60,
+    height: 60,
+  },
+] as const;
+
 export const OTHER_SKILL = [
+  {
+    skill_name: "Git",
+    image: "git.png",
+    width: 60,
+    height: 60,
+  },
 ] as const;
 
 export const PROJECTS = [
   {
-    title: "🚀 X Clone - Social Media Platform",
-    description: "A full-stack Twitter/X clone featuring user authentication, posting tweets, real-time interactions, and modern social media functionalities with a sleek UI.",
+    title: "Vulnexa - Web Vulnerability Scanner",
+    description: "A security tool designed to detect common web vulnerabilities like XSS and SQL Injection. Features automated scanning logic and report generation, built to demonstrate OWASP Top 10 security practices.",
+    image: "/projects/cybershield-project.webp", // Using cybershield image as it fits the security theme
+    link: "https://github.com/Mukesk/Vulnexa", // Assuming GitHub link, will use profile as fallback if unknown
+    github: "https://github.com/Mukesk/Vulnexa",
+    technologies: ["Python", "Security", "Automation", "OWASP"],
+    category: "Security",
+  },
+  {
+    title: "XClone - Social Media Application",
+    description: "A full-stack social media platform featuring JWT authentication, post creation, media uploads, and secure REST APIs. Built with React, Node.js, Express, and MongoDB.",
     image: "/projects/xclone-project.webp",
     link: "https://xclone-chi.vercel.app/",
     github: "https://github.com/Mukesk/xclone",
-    technologies: ["JavaScript", "React", "Node.js", "Express", "MongoDB"],
+    technologies: ["React", "Node.js", "Express", "MongoDB", "JWT"],
     category: "Full-Stack",
   },
   {
-    title: "🍽️ Swiggy Clone - Food Delivery Platform",
-    description: "A comprehensive food delivery application clone with restaurant browsing, menu selection, cart management, and order placement functionality built with modern web technologies.",
-    image: "/projects/swiggy-project.webp",
+    title: "BiteMe - Food Delivery Platform",
+    description: "A comprehensive food ordering platform with restaurant listings, dynamic cart system, and secure payment gateway integration. Focuses on responsive UI and secure backend architecture.",
+    image: "/projects/biteme-project.webp",
     link: "https://swiggy-clone-psi-liard.vercel.app/",
     github: "https://github.com/Mukesk/SwiggyClone",
-    technologies: ["React", "Vite", "Node.js", "Express", "MongoDB"],
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
     category: "Full-Stack",
-  },
-  {
-    title: "🛡️ FakeInsta - Phishing Awareness Platform",
-    description: "A controlled educational project demonstrating how phishing websites capture credentials — built for cybersecurity awareness and defensive training. Includes fake login page, credential logger, and automation script for lab use only.",
-    image: "/projects/cybershield-project.webp",
-    link: "https://cybershield-demo.netlify.app/",
-    github: "https://github.com/Mukesk/FakeInsta-PhisingSite",
-    technologies: ["HTML", "CSS", "PHP", "Python", "Selenium"],
-    category: "Security",
   },
 ] as const;
 
@@ -199,7 +253,7 @@ export const GITHUB_PORTFOLIO = {
   },
   highlights: [
     "Full-Stack Web Applications",
-    "Cybersecurity & Ethical Hacking Tools", 
+    "Cybersecurity & Ethical Hacking Tools",
     "Mobile & Cross-Platform Development",
     "API Development & Integration",
     "Educational Projects & Demos"
@@ -233,7 +287,7 @@ export const FOOTER_DATA = [
   {
     title: "About",
     data: [
-   
+
       {
         name: "Contact Me",
         icon: null,
@@ -243,154 +297,91 @@ export const FOOTER_DATA = [
   },
 ] as const;
 
-export const CERTIFICATIONS = [
+export const AWARDS = [
   {
-    title: "React & TypeScript Masterclass",
-    provider: "Cyfoxgen",
-    description: "Comprehensive course covering React 18, TypeScript, and modern development practices",
-    students: "125K+ students",
-    duration: "42 hours",
-    instructor: "Various Experts",
-    rating: 4.8,
-    status: "Completed",
-    skills: ["React Hooks", "TypeScript", "State Management"],
+    title: "Amrita Cyber Nation CTF 2025",
+    organization: "Amrita School of Computing",
+    year: "2025",
+    description: "Actively participated in the ACN Capture The Flag (CTF) competition, showcasing cybersecurity skills.",
+    image: "/certificates/acn-ctf-2025.jpg",
+    link: "/certificates/awards/sih-final.pdf", // Using SIH as placeholder if ACN PDF missing
+    category: "Award"
   },
   {
-    title: "Node.js Complete Guide",
-    provider: "Guvi",
-    description: "Learn Node.js from scratch with Express, MongoDB, and real-world projects",
-    students: "89K+ students",
-    duration: "35 hours",
-    instructor: "Various Experts",
-    rating: 4.7,
-    status: "Completed",
-    skills: ["Node.js", "Express.js", "MongoDB"],
+    title: "INFYRA 2024 Symposium",
+    organization: "Sairam Institute of Technology",
+    year: "2024",
+    description: "Certificate of Appreciation for contributions at INFYRA 2024 National-Level Tech Fest Symposium.",
+    image: "/certificates/infyra-2024.jpg",
+    link: "/certificates/awards/infyra-symposium.pdf",
+    category: "Award"
   },
   {
-    title: "Advanced CSS & Sass",
-    provider: "Frontend Masters",
-    description: "Master modern CSS techniques, animations, and responsive design",
-    students: "45K+ students",
-    duration: "28 hours",
-    instructor: "Sarah Drasner",
-    rating: 4.9,
-    status: "Completed",
-    skills: ["CSS Grid", "Flexbox", "Sass"],
+    title: "Invente '24 – Impromptu Event",
+    organization: "SSN College of Engineering",
+    year: "2024",
+    description: "Secured placement in the Impromptu event at Invente '24.",
+    image: "/certificates/invente-24-impromptu.jpg",
+    link: "/certificates/awards/invente-impromptu.pdf",
+    category: "Award"
   },
   {
-    title: "DevOps AWS and Generative AI",
-    provider: "AWS Training",
-    description: "Advanced DevOps practices with AWS services and AI integration",
-    students: "200K+ students",
-    duration: "60 hours",
-    instructor: "AWS Official",
-    rating: 4.6,
-    status: "In Progress",
-    skills: ["EC2", "S3", "Lambda"],
+    title: "Invente '24 – Sketch Scale Event",
+    organization: "SSN College of Engineering",
+    year: "2024",
+    description: "Achieved placement in the Sketch Scale event at Invente '24.",
+    image: "/certificates/invente-24-sketch-scale.jpg",
+    link: "/certificates/awards/invente-sketch.pdf",
+    category: "Award"
   },
   {
-    title: "React Native Development",
-    provider: "edX",
-    description: "Introduction to React Native and practical mobile app development",
-    students: "500K+ students",
-    duration: "50 hours",
-    instructor: "Andrew Ng",
-    rating: 4.8,
-    status: "In Progress",
-    skills: ["React Native", "Mobile Development", "Cross Platform"],
+    title: "Blockathon '24",
+    organization: "Velammal Engineering College",
+    year: "2024",
+    description: "Participated in Blockathon '24 organized by Hyperledger India Chapter.",
+    image: "/certificates/blockathon-24.jpg",
+    link: "/certificates/awards/blockathon.pdf",
+    category: "Award"
   },
   {
-    title: "Cybersecurity Fundamentals",
-    provider: "Guvi",
-    description: "Learn ethical hacking, network security, and penetration testing",
-    students: "75K+ students",
-    duration: "40 hours",
-    instructor: "Various Experts",
-    rating: 4.5,
-    status: "In Progress",
-    skills: ["Ethical Hacking", "Network Security", "Penetration Testing"],
-  },
+    title: "Akira Ransomware Research",
+    organization: "Independent",
+    year: "2025",
+    description: "Research and analysis of Akira Ransomware.",
+    image: "/certificates/awards/akira-preview.jpeg",
+    link: "/certificates/awards/akira.pdf",
+    category: "Award"
+  }
 ] as const;
 
-export const ACHIEVEMENTS = [
+export const COURSES = [
   {
-    icon: "🏆",
-    category: "CTF",
-    type: "PARTICIPANT",
-    id: "#1",
-    title: "Amrita Cyber Nation CTF 2025",
-    event: "Amrita School of Computing, Chennai",
-    description: "Actively participated in the ACN Capture The Flag (CTF) competition, 4th Edition, showcasing cybersecurity and problem-solving skills.",
-    tags: ["Cybersecurity", "CTF", "Amrita Vishwa Vidyapeetham"],
-    date: "15–18 September 2025",
-    location: "Chennai, India",
-    certificateImage: "/certificates/acn-ctf-2025.jpg",
+    title: "Ethical Hacking",
+    platform: "GUVI",
+    year: "2024",
+    description: "Comprehensive training in ethical hacking methodologies.",
+    image: "/certificates/courses/guvi-ethical-hacking.png",
+    link: "/certificates/courses/guvi-ethical-hacking.png",
+    category: "Course"
   },
   {
-    icon: "💡",
-    category: "Tech Fest",
-    type: "APPRECIATION",
-    id: "#2",
-    title: "INFYRA 2024 Symposium",
-    event: "Sairam Institute of Technology",
-    description: "Recognized with a Certificate of Appreciation for contributions and participation at INFYRA 2024 National-Level Tech Fest Symposium.",
-    tags: ["Tech Symposium", "Innovation", "Sairam Institute"],
-    date: "24 September 2024",
-    location: "Chennai, India",
-    certificateImage: "/certificates/infyra-2024.jpg",
+    title: "DevOps Fundamentals",
+    platform: "Coursera",
+    year: "2024",
+    description: "Foundational knowledge of DevOps practices and CI/CD.",
+    image: "/certificates/courses/coursera-devops-preview.jpeg",
+    link: "/certificates/courses/coursera-devops.pdf",
+    category: "Course"
   },
   {
-    icon: "🎤",
-    category: "Hackathon",
-    type: "ACHIEVEMENT",
-    id: "#3",
-    title: "Invente '24 – Impromptu Event",
-    event: "SSN College of Engineering & Shiv Nadar University",
-    description: "Secured placement in the Impromptu event at Invente '24, a national-level tech fest promoting innovation and quick problem-solving.",
-    tags: ["Hackathon", "Innovation", "Tech Fest"],
-    date: "27–28 September 2024",
-    location: "Chennai, India",
-    certificateImage: "/certificates/invente-24-impromptu.jpg",
-  },
-  {
-    icon: "🚀",
-    category: "Hackathon",
-    type: "PLACEMENT",
-    id: "#4",
-    title: "Invente '24 – Sketch Scale Event",
-    event: "SSN College of Engineering & Shiv Nadar University",
-    description: "Achieved placement in the Sketch Scale event at Invente '24, highlighting creativity and technical excellence.",
-    tags: ["Hackathon", "Creativity", "National Level"],
-    date: "27–28 September 2024",
-    location: "Chennai, India",
-    certificateImage: "/certificates/invente-24-sketch-scale.jpg",
-  },
-  {
-    icon: "⚡",
-    category: "Blockchain Hackathon",
-    type: "PARTICIPANT",
-    id: "#5",
-    title: "Blockathon '24",
-    event: "Velammal Engineering College – Hyperledger India Chapter",
-    description: "Participated in Blockathon '24 organized by Hyperledger India Chapter Student Society, contributing to blockchain innovation.",
-    tags: ["Blockchain", "Hyperledger", "Hackathon"],
-    date: "21 August 2024",
-    location: "Chennai, India",
-    certificateImage: "/certificates/blockathon-24.jpg",
-  },
-  {
-    icon: "🇮🇳",
-    category: "Hackathon",
-    type: "PARTICIPANT",
-    id: "#6",
-    title: "Smart India Hackathon 2024 - Internal",
-    event: "Government of India Initiative",
-    description: "Participated in the Smart India Hackathon 2024 internal selection rounds, contributing innovative solutions to real-world problems identified by government ministries and organizations.",
-    tags: ["Smart India Hackathon", "Innovation", "Government Initiative"],
-    date: "September 2024",
-    location: "India",
-    // certificateImage: "/certificates/smart-india-hackathon-2024.jpg", // Certificate not available yet
-  },
+    title: "IBM Design Thinking",
+    platform: "IBM",
+    year: "2026",
+    description: "Practitioner Badge for Enterprise Design Thinking.",
+    image: "/certificates/courses/ibm-design-preview.jpeg",
+    link: "/certificates/courses/ibm-design.pdf",
+    category: "Course"
+  }
 ] as const;
 
 export const NAV_LINKS = [
@@ -411,9 +402,11 @@ export const NAV_LINKS = [
     link: "#certifications",
   },
   {
-    title: "Achievements",
-    link: "#achievements",
+    title: "Awards",
+    link: "#awards",
+  },
+  {
+    title: "Blog",
+    link: "/blog",
   },
 ] as const;
-
-

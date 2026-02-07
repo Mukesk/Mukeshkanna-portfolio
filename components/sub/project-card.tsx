@@ -12,6 +12,7 @@ type ProjectCardProps = {
   github: string;
   technologies: string[];
   category: string;
+  onClick?: () => void;
 };
 
 export const ProjectCard = ({
@@ -22,6 +23,7 @@ export const ProjectCard = ({
   github,
   technologies,
   category,
+  onClick,
 }: ProjectCardProps) => {
   return (
     <motion.div
@@ -29,7 +31,8 @@ export const ProjectCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="w-full max-w-sm mx-auto bg-gradient-to-br from-[#0F0A1E]/80 to-[#1A0E2E]/60 backdrop-blur-lg border border-[#7042f88b] rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transform hover:scale-[1.02] transition-all duration-300"
+      className="w-full max-w-sm mx-auto bg-gradient-to-br from-[#0F0A1E]/80 to-[#1A0E2E]/60 backdrop-blur-lg border border-[#7042f88b] rounded-xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transform hover:scale-[1.02] transition-all duration-300 cursor-pointer group"
+      onClick={onClick}
     >
       {/* Category Badge */}
       <div className="absolute top-3 left-3 z-20">
@@ -55,7 +58,7 @@ export const ProjectCard = ({
         <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
           {title}
         </h3>
-        
+
         <p className="text-gray-300 text-sm mb-4 line-clamp-3">
           {description}
         </p>

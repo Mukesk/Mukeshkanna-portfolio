@@ -1,21 +1,33 @@
 "use client";
 
+import { useState } from "react";
 import { ProjectCard } from "@/components/sub/project-card";
+import { ProjectModal } from "@/components/sub/project-modal";
 import { PROJECTS } from "@/constants";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Projects = () => {
+  const [filter, setFilter] = useState("All");
+  const [selectedProject, setSelectedProject] = useState<any>(null); // Using any for simplicity with readonly types, or define proper type intersection
+
+  // Extract unique categories, adding "All" at the beginning
+  const categories = ["All", ...Array.from(new Set(PROJECTS.map((p) => p.category)))];
+
+  const filteredProjects = PROJECTS.filter((project) =>
+    filter === "All" ? true : project.category === filter
+  );
+
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-20 px-4"
+      className="flex flex-col items-center justify-center py-20 px-4 scroll-mt-20"
     >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-12"
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4">
           Galactic Projects
@@ -25,29 +37,52 @@ export const Projects = () => {
         </p>
       </motion.div>
 
+      {/* Filter Tabs */}
+      <div className="flex flex-wrap justify-center gap-4 mb-12 z-[20]">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setFilter(cat)}
+            className={`px-6 py-2 rounded-full border transition-all duration-300 ${filter === cat
+                ? "bg-purple-600 border-purple-600 text-white shadow-lg shadow-purple-500/25"
+                : "bg-transparent border-gray-600 text-gray-400 hover:border-purple-400 hover:text-white"
+              }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
       {/* Projects Grid */}
-      <div className="w-full max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {PROJECTS.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <ProjectCard
-                src={project.image}
-                title={project.title}
-                description={project.description}
-                link={project.link}
-                github={project.github}
-                technologies={[...project.technologies]}
-                category={project.category}
-              />
-            </motion.div>
-          ))}
-        </div>
+      <div className="w-full max-w-7xl mx-auto z-[20]">
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
+        >
+          <AnimatePresence mode='popLayout'>
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                layout
+                key={project.title}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ProjectCard
+                  src={project.image}
+                  title={project.title}
+                  description={project.description}
+                  link={project.link}
+                  github={project.github}
+                  technologies={[...project.technologies]}
+                  category={project.category}
+                  onClick={() => setSelectedProject(project)}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
 
       {/* Call to Action */}
@@ -56,11 +91,11 @@ export const Projects = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ once: true }}
-        className="mt-16 text-center"
+        className="mt-16 text-center z-[20]"
       >
         <p className="text-gray-400 mb-6">Want to see more of my work?</p>
         <a
-          href="https://github.com/mukesk"
+          href="https://github.com/Mukesk"
           target="_blank"
           rel="noreferrer noopener"
           className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -71,6 +106,13 @@ export const Projects = () => {
           View All Projects on GitHub
         </a>
       </motion.div>
+
+      {/* Check selectedProject type compatibility or cast */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   );
 };
