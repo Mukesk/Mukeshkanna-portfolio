@@ -233,7 +233,7 @@ export const PROJECTS = [
   {
     title: "BiteMe - Food Delivery Platform",
     description: "A comprehensive food ordering platform with restaurant listings, dynamic cart system, and secure payment gateway integration. Focuses on responsive UI and secure backend architecture.",
-    image: "/projects/biteme-project.webp",
+    image: "/projects/bitme.webp",
     link: "https://swiggy-clone-psi-liard.vercel.app/",
     github: "https://github.com/Mukesk/SwiggyClone",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
