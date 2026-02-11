@@ -7,6 +7,9 @@ import { motion } from "framer-motion";
 import { RxGithubLogo, RxExternalLink } from "react-icons/rx";
 import { SiLeetcode } from "react-icons/si";
 import { GITHUB_PORTFOLIO } from "@/constants";
+import dynamic from "next/dynamic";
+
+const GitHubCalendar = dynamic(() => import("react-github-calendar").then((mod) => mod.GitHubCalendar), { ssr: false });
 
 export const CodingProfiles = () => {
     return (
@@ -52,19 +55,24 @@ export const CodingProfiles = () => {
                                 <p className="text-gray-300 mb-6">
                                     {GITHUB_PORTFOLIO.description}
                                 </p>
-                                <div className="grid grid-cols-3 gap-2 mb-8">
-                                    <div className="text-center p-3 bg-white/5 rounded-lg border border-white/5">
-                                        <div className="font-bold text-purple-400">12+</div>
-                                        <div className="text-xs text-gray-400">Repos</div>
-                                    </div>
-                                    <div className="text-center p-3 bg-white/5 rounded-lg border border-white/5">
-                                        <div className="font-bold text-cyan-400">4+</div>
-                                        <div className="text-xs text-gray-400">Followers</div>
-                                    </div>
-                                    <div className="text-center p-3 bg-white/5 rounded-lg border border-white/5">
-                                        <div className="font-bold text-green-400">Active</div>
-                                        <div className="text-xs text-gray-400">Status</div>
-                                    </div>
+                                <div className="w-full overflow-hidden rounded-lg mb-8 border border-white/5 bg-black/20 flex justify-center py-4">
+                                    <img
+                                        src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mukesk&theme=github_dark"
+                                        alt="GitHub Profile Details"
+                                        className="w-full h-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                                    />
+                                </div>
+                                <div className="w-full overflow-hidden rounded-lg mb-8 border border-white/5 bg-black/20 flex justify-center items-center py-8 px-4">
+                                    <GitHubCalendar
+                                        username="Mukesk"
+                                        colorScheme="dark"
+                                        blockSize={10}
+                                        blockMargin={4}
+                                        fontSize={12}
+                                        theme={{
+                                            dark: ["#1b1f23", "#2ea44f"],
+                                        }}
+                                    />
                                 </div>
                             </div>
 
